@@ -50,6 +50,16 @@
     <servlet-name>TodoEditServlet</servlet-name>
     <url-pattern>/editTask</url-pattern>
   </servlet-mapping>
+  
+  <!-- TodoToggleServlet -->
+  <servlet>
+    <servlet-name>TodoToggleServlet</servlet-name>
+    <servlet-class>com.app.servlets.TodoToggleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TodoToggleServlet</servlet-name>
+    <url-pattern>/toggleStatus</url-pattern>
+  </servlet-mapping>
 
 	
 </web-app>

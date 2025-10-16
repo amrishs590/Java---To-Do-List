@@ -22,22 +22,20 @@ form {
 
 input[type="text"] {
     padding: 8px;
-    width: 250px;
+    width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 button {
-    padding: 8px 12px;
-    background-color: #007BFF;
+    padding: 6px 12px;
     border: none;
     border-radius: 4px;
-    color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    opacity: 0.9;
 }
 
 ul {
@@ -56,45 +54,85 @@ li {
     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-li form {
-    margin: 0;
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.status-notcompleted {
+    background-color: red;
+}
+
+.status-completed {
+    background-color: green;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+}
+
+.edit-btn,.Add-btn {
+    background-color: #007BFF;
+    color: white;
 }
 </style>
 </head>
 <body>
 	<h1>Todo List</h1>
+	
 	<form method="post" action="addTask">
-		<input type="text" name="task" placeholder="Enter a task to add" required />
-		<button type="submit">Add</button>
+	    <input type="text" name="task" placeholder="Enter a task to add" required />
+	    <button type="submit" class="Add-btn">Add</button>
 	</form>
+	
 	<h1>Todo Tasks</h1>
 	<ul>
-	<%
-		java.util.List<com.app.model.Task> alltask = (java.util.List<com.app.model.Task>) request.getAttribute("alltasks");
-		if(alltask!=null && !alltask.isEmpty())
-		{
-			int cnt = 1;
-			for(com.app.model.Task i:alltask)
-			{
-	%>
-			<li>
-				<span><%= cnt++%> - <%= i.getTaskName() %></span>
-				<form method="post" action="editTask" style="display:inline">
-					<input type="hidden" name="id" value="<%=i.getId()%>"/>
-					<input type="text" name="newTask"  placeholder="Enter Task to edit"/>
-					<button type="submit">Edit</button>
-				</form>
-				<form method="post" action="deleteTask" style="display:inline">
-					<input type="hidden" name="id" value="<%=i.getId()%>"/>
-					<button type="submit">Delete</button>
-				</form>
-			</li>
-	<%
-			}
-		}else {
-			out.println("No Task Listed");
-		}
-	%>
+		<%
+		    java.util.List<com.app.model.Task> alltask = (java.util.List<com.app.model.Task>) request.getAttribute("alltasks");
+		    if(alltask != null && !alltask.isEmpty()) {
+		        int cnt = 1;
+		        for(com.app.model.Task i : alltask) {
+		            boolean completed = i.isCompleted(); 
+		%>
+		    <li>
+		        <div class="task-info">
+		            <span><%= cnt++ %> - <%= i.getTaskName() %></span>
+		
+		            <form method="post" action="toggleStatus" style="display:inline">
+		                <input type="hidden" name="id" value="<%= i.getId() %>"/>
+		                <button type="submit" class="status-btn <%= completed ? "status-completed" : "status-notcompleted" %>">
+		                    <%= completed ? "Completed" : "Not Completed" %>
+		                </button>
+		            </form>
+		
+		            <form method="post" action="editTask" style="display:inline">
+		                <input type="hidden" name="id" value="<%= i.getId() %>"/>
+		                <input type="text" name="newTask" placeholder="Enter Task to edit"/>
+		                <button type="submit" class="edit-btn">Edit</button>
+		            </form>
+		        </div>
+		
+		        <form method="post" action="deleteTask" style="display:inline">
+		            <input type="hidden" name="id" value="<%= i.getId() %>"/>
+		            <button type="submit" class="delete-btn">Delete</button>
+		        </form>
+		    </li>
+		<%
+		        }
+		    } else {
+		        out.println("No Task Listed");
+		    }
+		%>
 	</ul>
 </body>
 </html>

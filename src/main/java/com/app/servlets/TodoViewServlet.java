@@ -27,7 +27,8 @@ public class TodoViewServlet extends HttpServlet
 			{
 				int id = rs.getInt("id");
 				String n = rs.getString("task");
-				alltasks.add(new Task(id,n));
+				boolean status  = rs.getBoolean("status");
+				alltasks.add(new Task(id,n,status));
 			}
 		}catch(Exception e)
 		{
