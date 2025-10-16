@@ -7,13 +7,14 @@
 <title>Todo List</title>
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    padding: 30px;
 }
 
 h1 {
     color: #333;
+    margin-bottom: 20px;
 }
 
 form {
@@ -21,71 +22,92 @@ form {
 }
 
 input[type="text"] {
-    padding: 8px;
-    width: 200px;
+    padding: 8px 12px;
+    width: 220px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 button {
-    padding: 6px 12px;
+    padding: 6px 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    opacity: 0.9;
+    opacity: 0.85;
+    transform: scale(1.05);
 }
 
 ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
 li {
     background-color: #fff;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    border-radius: 5px;
+    margin-bottom: 12px;
+    padding: 12px 18px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 .task-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .status-btn {
-    padding: 4px 10px;
-    border-radius: 4px;
-    color: white;
+    padding: 5px 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 13px;
     cursor: pointer;
-    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 .status-notcompleted {
-    background-color: red;
+    background-color: #e74c3c;
 }
 
 .status-completed {
-    background-color: green;
+    background-color: #27ae60;
 }
 
 .delete-btn {
-    background-color: red;
-    color: white;
+    background-color: #c0392b;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 5px 12px;
 }
 
-.edit-btn,.Add-btn {
-    background-color: #007BFF;
-    color: white;
+.edit-btn, .Add-btn {
+    background-color: #2980b9;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 5px 12px;
+}
+
+span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
 }
 </style>
+
 </head>
 <body>
 	<h1>Todo List</h1>

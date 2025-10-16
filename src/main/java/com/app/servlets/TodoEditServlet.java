@@ -15,16 +15,19 @@ public class TodoEditServlet extends HttpServlet {
 	{
 		int id = Integer.parseInt(req.getParameter("id"));
 		String newTask = req.getParameter("newTask");
-		try(Connection conn = DBConnection.getConnection())
+		if(newTask!=null && !newTask.trim().isEmpty())
 		{
-			System.out.println("Task Updated : "+newTask);
-			PreparedStatement ps = conn.prepareStatement("Update tasks set task=? where id=?");
-			ps.setString(1,newTask);
-			ps.setInt(2, id);
-			ps.executeUpdate();			
-		}catch(Exception e)
-		{
-			e.printStackTrace();
+			try(Connection conn = DBConnection.getConnection())
+			{
+				System.out.println("Task Updated : "+newTask);
+				PreparedStatement ps = conn.prepareStatement("Update tasks set task=? where id=?");
+				ps.setString(1,newTask);
+				ps.setInt(2, id);
+				ps.executeUpdate();			
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 		res.sendRedirect("viewTasks");
 	}
