@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*,com.app.model.Task" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,6 +107,29 @@ span {
     font-weight: 500;
     color: #333;
 }
+
+li {
+    background-color: #fff;
+    margin-bottom: 12px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.task-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.task-actions form {
+    display: inline-block;
+    margin-left: 8px;
+}
+
 </style>
 
 </head>
@@ -120,35 +144,36 @@ span {
 	<h1>Todo Tasks</h1>
 	<ul>
 		<%
-		    java.util.List<com.app.model.Task> alltask = (java.util.List<com.app.model.Task>) request.getAttribute("alltasks");
+		    List<Task> alltask = (List<Task>) request.getAttribute("alltasks");
 		    if(alltask != null && !alltask.isEmpty()) {
 		        int cnt = 1;
 		        for(com.app.model.Task i : alltask) {
 		            boolean completed = i.isCompleted(); 
 		%>
 		    <li>
-		        <div class="task-info">
-		            <span><%= cnt++ %> - <%= i.getTaskName() %></span>
-		
-		            <form method="post" action="toggleStatus" style="display:inline">
-		                <input type="hidden" name="id" value="<%= i.getId() %>"/>
-		                <button type="submit" class="status-btn <%= completed ? "status-completed" : "status-notcompleted" %>">
-		                    <%= completed ? "Completed" : "Not Completed" %>
-		                </button>
-		            </form>
-		
-		            <form method="post" action="editTask" style="display:inline">
-		                <input type="hidden" name="id" value="<%= i.getId() %>"/>
-		                <input type="text" name="newTask" placeholder="Enter Task to edit"/>
-		                <button type="submit" class="edit-btn">Edit</button>
-		            </form>
-		        </div>
-		
-		        <form method="post" action="deleteTask" style="display:inline">
-		            <input type="hidden" name="id" value="<%= i.getId() %>"/>
-		            <button type="submit" class="delete-btn">Delete</button>
-		        </form>
-		    </li>
+    <span class="task-name"><%= cnt++ %> - <%= i.getTaskName() %></span>
+    
+    <div class="task-actions">
+        <form method="post" action="toggleStatus" style="display:inline">
+            <input type="hidden" name="id" value="<%= i.getId() %>"/>
+            <button type="submit" class="status-btn <%= completed ? "status-completed" : "status-notcompleted" %>">
+                <%= completed ? "Completed" : "Not Completed" %>
+            </button>
+        </form>
+
+        <form method="post" action="editTask" style="display:inline">
+            <input type="hidden" name="id" value="<%= i.getId() %>"/>
+            <input type="text" name="newTask" placeholder="Edit Task"/>
+            <button type="submit" class="edit-btn">Edit</button>
+        </form>
+
+        <form method="post" action="deleteTask" style="display:inline">
+            <input type="hidden" name="id" value="<%= i.getId() %>"/>
+            <button type="submit" class="delete-btn">Delete</button>
+        </form>
+    </div>
+</li>
+
 		<%
 		        }
 		    } else {
