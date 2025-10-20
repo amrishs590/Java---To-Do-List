@@ -27,4 +27,6 @@ public class TodoDeleteServlet extends HttpServlet
 		}
 		res.sendRedirect("viewTasks");		
 	}
+	
+	
 }
