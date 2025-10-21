@@ -10,57 +10,17 @@
   <welcome-file-list>
 	  <welcome-file>viewTasks</welcome-file>
    </welcome-file-list>
-  
-  <!-- TodoAddServlet -->
-  <servlet>
-    <servlet-name>TodoAddServlet</servlet-name>
-    <servlet-class>com.app.servlets.TodoAddServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TodoAddServlet</servlet-name>
-    <url-pattern>/addTask</url-pattern>
-  </servlet-mapping>
-
-  <!-- TodoViewServlet -->
-  <servlet>
-    <servlet-name>TodoViewServlet</servlet-name>
-    <servlet-class>com.app.servlets.TodoViewServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TodoViewServlet</servlet-name>
-    <url-pattern>/viewTasks</url-pattern>
-  </servlet-mapping>
-  
-  <!-- TodoDeleteServlet -->
-  <servlet>
-    <servlet-name>TodoDeleteServlet</servlet-name>
-    <servlet-class>com.app.servlets.TodoDeleteServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TodoDeleteServlet</servlet-name>
-    <url-pattern>/deleteTask</url-pattern>
-  </servlet-mapping>
-  
-  <!-- TodoEditServlet -->
-  <servlet>
-    <servlet-name>TodoEditServlet</servlet-name>
-    <servlet-class>com.app.servlets.TodoEditServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TodoEditServlet</servlet-name>
-    <url-pattern>/editTask</url-pattern>
-  </servlet-mapping>
-  
-  <!-- TodoToggleServlet -->
-  <servlet>
-    <servlet-name>TodoToggleServlet</servlet-name>
-    <servlet-class>com.app.servlets.TodoToggleServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TodoToggleServlet</servlet-name>
-    <url-pattern>/toggleStatus</url-pattern>
-  </servlet-mapping>
+   
+   <servlet>
+	    <servlet-name>TaskServlet</servlet-name>
+	    <servlet-class>com.app.servlets.TaskServlet</servlet-class>
+	</servlet>
 	
+	<servlet-mapping>
+	    <servlet-name>TaskServlet</servlet-name>
+	    <url-pattern>/tasks</url-pattern>
+	</servlet-mapping>
+   
 	<filter>
 	    <filter-name>SecurityFilter</filter-name>
 	    <filter-class>com.app.filters.SecurityFilter</filter-class>
@@ -70,7 +30,4 @@
 	    <filter-name>SecurityFilter</filter-name>
 	    <url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
-
-	
 </web-app>

@@ -25,7 +25,7 @@ public class SecurityFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
-        addSecurityHeaders(res);
+        addSecurityHeaders(res);//Browser level security
 
         HttpSession session = req.getSession(true);
         ensureCsrfToken(session);
@@ -49,15 +49,15 @@ public class SecurityFilter implements Filter {
 
     private void addSecurityHeaders(HttpServletResponse res) {
         res.setHeader("X-Content-Type-Options", "nosniff");
-        res.setHeader("X-Frame-Options", "DENY");
-        res.setHeader("Referrer-Policy", "no-referrer");
-        res.setHeader("Permissions-Policy", "geolocation=(), microphone=()");
+        res.setHeader("X-Frame-Options", "DENY"); //I frames ah avoid
+        res.setHeader("Referrer-Policy", "no-referrer"); //prevents web url sent as refered to other sites
+        res.setHeader("Permissions-Policy", "geolocation=(), microphone=()"); // prevents from using browsers microphone & location
         res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
         String csp = "default-src 'self'; " +
                 "script-src 'self'; " +
                 "style-src 'self' 'unsafe-inline'; " +
                 "object-src 'none'; " +
-                "frame-ancestors 'none';";
+                "frame-ancestors 'none';"; // content security policy
         res.setHeader("Content-Security-Policy", csp);
     }
 
@@ -68,5 +68,5 @@ public class SecurityFilter implements Filter {
             String token = Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
             session.setAttribute("CSRF_TOKEN", token);
         }
-    }
+    }	
 }
