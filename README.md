@@ -75,26 +75,26 @@ CREATE TABLE tasks (
 
 **🔒 Cross-Site Scripting (XSS) Protectio**
 
-All user inputs are validated and encoded before rendering in JSP pages.
-Output data is HTML-escaped using JSTL tags or Java string escaping to prevent script injection.
-Special characters like <, >, ", ', and & are sanitized before display.
+- All user inputs are validated and encoded before rendering in JSP pages.
+- Output data is HTML-escaped using JSTL tags or Java string escaping to prevent script injection.
+- Special characters like <, >, ", ', and & are sanitized before display.
 
 **🔑 Cross-Site Request Forgery (CSRF) Protection**
 
-Each form submission includes a unique CSRF token stored in the session.
-The server validates this token before processing any form request.
-Requests without valid tokens are rejected, ensuring that no malicious third-party site can perform unauthorized actions.
+- Each form submission includes a unique CSRF token stored in the session.
+- The server validates this token before processing any form request.
+- Requests without valid tokens are rejected, ensuring that no malicious third-party site can perform unauthorized actions.
 
 **🧰 Additional Security**
 
-Database operations use Prepared Statements (no SQL injection).
-Session timeout is enforced to prevent unauthorized access.
-Sensitive data like passwords are never stored in plain text.
+- Database operations use Prepared Statements (no SQL injection).
+- Session timeout is enforced to prevent unauthorized access.
+- Sensitive data like passwords are never stored in plain text.
 
 **🧠 Learning Highlights**
 
-Implemented MVC pattern with JSP & Servlets
-Secure JDBC connection setup with MySQL
-Applied XSS & CSRF prevention mechanisms
-Hands-on experience deploying to Tomcat Server
+- Implemented MVC pattern with JSP & Servlets
+- Secure JDBC connection setup with MySQL
+- Applied XSS & CSRF prevention mechanisms
+- Hands-on experience deploying to Tomcat Server
 
