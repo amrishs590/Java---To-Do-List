@@ -64,14 +64,13 @@ CREATE TABLE tasks (
 - Go to File → Import → Existing Projects into Workspace
 - Select the project folder
 - Add the project to Tomcat Server
-- Start the server and open the app at
-- 👉 http://localhost:8080/ToDoList
+- Start the server and open the app at  👉 http://localhost:8080/ToDoList
 
 ---
 
 **🛡️ Security Features**
 
-**Security is a key focus in this project**. It includes protection against common web vulnerabilities:
+ **Security is a key focus in this project**. It includes protection against common web vulnerabilities:
 
 **🔒 Cross-Site Scripting (XSS) Protectio**
 
