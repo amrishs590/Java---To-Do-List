@@ -45,14 +45,14 @@ This project allows users to create, view, update, and delete tasks efficiently,
 
 **2️⃣ Database Setup**
 
-CREATE DATABASE todolist;
-USE todolist;
-CREATE TABLE tasks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    description TEXT,
-    status ENUM('Pending', 'Completed') DEFAULT 'Pending'
-);
+    CREATE DATABASE todolist;
+    USE todolist;
+    CREATE TABLE tasks (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(100) NOT NULL,
+        description TEXT,
+        status ENUM('Pending', 'Completed') DEFAULT 'Pending'
+    );
 
 **3️⃣ Configure Database Connection**
 
