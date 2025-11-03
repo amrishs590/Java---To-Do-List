@@ -5,14 +5,14 @@ This project allows users to create, view, update, and delete tasks efficiently,
 
 **🚀 Features**
 
-➕ Add new tasks
-✏️ Edit existing tasks
-✅ Mark tasks as completed or pending
-❌ Delete tasks
-💾 Data persistence using MySQL
-🔐 User session handling
-🛡️ Secured against XSS and CSRF attacks
-🌐 Simple and responsive JSP UI
+- ➕ Add new tasks
+- ✏️ Edit existing tasks
+- ✅ Mark tasks as completed or pending
+- ❌ Delete tasks
+- 💾 Data persistence using MySQL
+- 🔐 User session handling
+- 🛡️ Secured against XSS and CSRF attacks
+- 🌐 Simple and responsive JSP UI
 
 **🧱 Tech Stack**
 
@@ -27,13 +27,13 @@ Build Tool	Manual Deployment (WAR)
 **⚙️ Setup Instructions**
 
 **1️⃣ Prerequisites**
-Make sure you have the following installed:
+  Make sure you have the following installed:
 
-Java JDK 8+
-Apache Tomcat 9+
-MySQL Server
-Eclipse IDE for Enterprise Java Developers
-MySQL Connector JAR (add to lib folder of Tomcat or project
+- Java JDK 8+
+- Apache Tomcat 9+
+- MySQL Server
+- Eclipse IDE for Enterprise Java Developers
+- MySQL Connector JAR (add to lib folder of Tomcat or project
 
 **2️⃣ Database Setup**
 
@@ -48,18 +48,18 @@ CREATE TABLE tasks (
 
 **3️⃣ Configure Database Connection**
 
-private static final String URL = "jdbc:mysql://localhost:3306/todolist";
-private static final String USER = "root";
-private static final String PASSWORD = "yourpassword";
+- private static final String URL = "jdbc:mysql://localhost:3306/todolist";
+- private static final String USER = "root";
+- private static final String PASSWORD = "yourpassword";
 
 **4️⃣ Deploy Project to Tomcat**
 
-Open Eclipse
-Go to File → Import → Existing Projects into Workspace
-Select the project folder
-Add the project to Tomcat Server
-Start the server and open the app at
-👉 http://localhost:8080/ToDoList
+- Open Eclipse
+- Go to File → Import → Existing Projects into Workspace
+- Select the project folder
+- Add the project to Tomcat Server
+- Start the server and open the app at
+- 👉 http://localhost:8080/ToDoList
 
 **🛡️ Security Features**
 
