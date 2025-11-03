@@ -18,15 +18,17 @@ This project allows users to create, view, update, and delete tasks efficiently,
 
 ---
 
-**🧱 Tech Stack**
+## 🧩 Tech Stack
 
-Layer	Technology Used
-Client (Frontend)	JSP, HTML, CSS
-Server (Backend)	Java Servlets
-Database	MySQL
-Web Server	Apache Tomcat
-IDE (Recommended)	Eclipse / IntelliJ IDEA
-Build Tool	Manual Deployment (WAR)
+| Layer | Technology Used |
+|--------|------------------|
+| **Client (Frontend)** | JSP, HTML, CSS |
+| **Server (Backend)** | Java Servlets |
+| **Database** | MySQL |
+| **Web Server** | Apache Tomcat |
+| **IDE (Recommended)** | Eclipse / IntelliJ IDEA |
+| **Build Tool** | Manual Deployment (WAR) |
+
 
 ---
 
