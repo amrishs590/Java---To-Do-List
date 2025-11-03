@@ -3,6 +3,8 @@
 A simple yet secure To-Do List Web App built using JSP (Client), Java Servlets (Backend), MySQL (Database), and Apache Tomcat (Server).
 This project allows users to create, view, update, and delete tasks efficiently, demonstrating a secure full-stack Java web application setup.
 
+--- 
+
 **🚀 Features**
 
 - ➕ Add new tasks
@@ -14,6 +16,8 @@ This project allows users to create, view, update, and delete tasks efficiently,
 - 🛡️ Secured against XSS and CSRF attacks
 - 🌐 Simple and responsive JSP UI
 
+---
+
 **🧱 Tech Stack**
 
 Layer	Technology Used
@@ -23,6 +27,8 @@ Database	MySQL
 Web Server	Apache Tomcat
 IDE (Recommended)	Eclipse / IntelliJ IDEA
 Build Tool	Manual Deployment (WAR)
+
+---
 
 **⚙️ Setup Instructions**
 
@@ -60,6 +66,8 @@ CREATE TABLE tasks (
 - Add the project to Tomcat Server
 - Start the server and open the app at
 - 👉 http://localhost:8080/ToDoList
+
+---
 
 **🛡️ Security Features**
 
